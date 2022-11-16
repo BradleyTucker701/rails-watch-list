@@ -1,0 +1,35 @@
+<div class="container mt-5 list-show" data-controller="movie">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1><span class="lighter"><%= link_to 'Lists', root_path %> > </span> <%= @list.name%></h1>
+    <div class="div">
+      <%= link_to new_list_bookmark_path(@list), class: 'btn btn-primary' do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+  <% if @list.movies.any? %>
+    <div class="mt-5">
+      <h3>Top Movie</h3>
+      <div class="selected-movie" data-movie-target="selected">
+        <%= render 'movies/selected', movie: @list.bookmarks.first.movie, bookmark: @list.bookmarks.first %>
+      </div>
+      <br>
+      <h3>Movies</h3>
+      <div class="owl-carousel owl-theme">
+        <% @list.bookmarks.each do |bookmark| %>
+          <div class="item card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= bookmark.movie.poster_url %>)" data-action="click->movie#select" data-template='<%= ActionController::Base.new.render_to_string(partial: 'movies/selected', locals: { movie: bookmark.movie, bookmark: bookmark }) %>'>
+            <%= bookmark.movie.title %>
+            <div class="card-rating">
+              <i class="fas fa-star"></i> <%= bookmark.movie.rating %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="text-center">
+      <%= link_to 'Add Movie', new_list_bookmark_path(@list), class: 'btn btn-primary'  %>
+    </div>
+  <% end %>
+  <%= link_to 'Remove', list_path(@list), method: :delete, data: { confirm: "Hey hold up. Should you be delete this whole list?" }, class: 'purple'  %>
+</div>

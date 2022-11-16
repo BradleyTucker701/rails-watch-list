@@ -1,0 +1,15 @@
+<div class="container my-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1><span class="lighter"><%= link_to 'Lists', root_path %> > </span> Add</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+      <% if @list %>
+        <h1>Movie to <%= @list.name %></h1>
+      <% elsif @movie %>
+        <h1><%= @movie.title %> to List</h1>
+      <% end %>
+      <%= render 'bookmarks/form' %>
+    </div>
+  </div>
+</div>

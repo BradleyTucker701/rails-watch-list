@@ -1,0 +1,13 @@
+<div class="card-product">
+  <%= image_tag movie.poster_url, alt: "movie poster" %>
+  <div class="card-product-infos">
+    <h2><%= movie.title %></h2>
+    <p class="no-overflow"><%= movie.overview %></p>
+  </div>
+  <div class="card-rating">
+    <i class="fas fa-star"></i> <%= movie.rating %>
+  </div>
+</div>
+<div class="card-subinfo">
+  <i class="fas fa-quote-left"></i> <%= bookmark.comment %> <i class="fas fa-quote-right"></i>
+</div>

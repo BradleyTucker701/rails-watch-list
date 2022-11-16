@@ -1,0 +1,49 @@
+.container-scroll {
+  display: flex;
+  margin-top: 50px;
+  .item {
+    position: relative;
+    display: block;
+    flex: 1 1 0px;
+    transition: transform 500ms;
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}
+
+
+.container-scroll:focus-within .item,
+.container-scroll:hover .item {
+  transform: translateX(-25%);
+}
+
+.item:focus ~ .item,
+.item:hover ~ .item {
+  transform: translateX(25%);
+}
+
+.container-scroll .item:focus,
+.container-scroll .item:hover {
+  transform: scale(1.5);
+  z-index: 1;
+}
+
+.owl-carousel {
+  display: flex;
+  .owl-prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90%;
+    font-size: 30px !important;
+  }
+  .owl-next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 90%;
+    font-size: 30px !important;
+  }
+}

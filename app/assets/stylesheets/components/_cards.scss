@@ -1,0 +1,94 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  transition: transform 500ms;
+}
+
+.card-rating {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  font-weight: lighter;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px;
+  border-radius: 4px;
+  .fa-star {
+    color: $yellow;
+  }
+}
+
+.card-subinfo {
+  padding: 16px;
+  background-color: #714d78;
+  text-align: center;
+  .fas {
+    margin: 0 8px;
+  }
+}
+
+.list-show {
+  .card-category {
+    font-size: 16px;
+  }
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%
+}
+
+.card-add {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.card-product {
+  overflow: hidden;
+  height: 132px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  background-color: $purple;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
