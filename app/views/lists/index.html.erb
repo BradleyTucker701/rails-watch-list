@@ -9,13 +9,13 @@
   <h3>My Lists</h3>
   <div class="owl-carousel owl-theme">
     <% @lists.each do |list| %>
-      <%= render 'lists/card', list: list %>
+      <%# <%= render 'lists/card', list: list %> %>
     <% end %>
   </div>
   <h3>Recommended</h3>
   <div class="owl-carousel owl-theme">
     <% @lists.reverse.each do |list| %>
-      <%= render 'lists/card', list: list %>
+      <%# <%= render 'lists/card', list: list %> %>
     <% end %>
   </div>
   <h3>New Movie Suggestions</h3>
