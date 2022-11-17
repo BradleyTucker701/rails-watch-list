@@ -9,13 +9,17 @@
   <h3>My Lists</h3>
   <div class="owl-carousel owl-theme">
     <% @lists.each do |list| %>
-      <%# <%= render 'lists/card', list: list %> %>
+      <%# <%= render 'lists/card', list: list %>
+      <% list.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    <% list.name %>
     <% end %>
   </div>
   <h3>Recommended</h3>
   <div class="owl-carousel owl-theme">
     <% @lists.reverse.each do |list| %>
-      <%# <%= render 'lists/card', list: list %> %>
+      <%# <%= render 'lists/card', list: list %>
     <% end %>
   </div>
   <h3>New Movie Suggestions</h3>
